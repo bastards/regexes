@@ -47,7 +47,7 @@ Let's use the plus sign to change the repeated newline characters in Richard Fey
 
 Given this text:
 
-~~~
+~~~text
 	Dear Mr. Stanley, 
 
 
@@ -70,14 +70,14 @@ Given this text:
 Convert it to:
 
 
-~~~
+```text
 	Dear Mr. Stanley, 
 	I don’t know how to answer your question -- I see no contradiction. 
 	All you have to do is, from time to time -- in spite of everything, 
 	just try to examine a problem in a novel way. 
 	You won’t “stifle the creative process” if you remember to think 
 	from time to time. Don’t you have time to think?
-~~~
+```
 
 #### Answer
 
@@ -98,11 +98,13 @@ Technically, *yes*. But since the **Replace** value is set to replace the patter
 
 Try it out yourself. Copy this single-spaced block of text:
 
-{:lang="text"}
+{lang="text"}
+~~~
 	The quick brown fox
 	jumps over
 	the lazy
 	dog
+~~~
 
 And set **Find** to: `\n+` and **Replace** to: `\n`
 
