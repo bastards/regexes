@@ -9,7 +9,7 @@ W> You're free to download it as I work on it. Just don't expect perfection.
 W>
 W>This is my first time using [Leanpub](http://leanpub.com), so I'm still trying to get the hang of its particular dialect of Markdown. At the same time, I know people want to know the general direction of the book. So rather than wait until the book is even reasonably polished, I'm just hitting "Publish" as I go. 
 W>
-W> Also, you can visit this book's repo at [Github](//github.com/bastards/regexes)
+W> Also, you can visit this book's repo at [Github](//github.com/bastards/regexes) as of November 2014
 
 
 ----
