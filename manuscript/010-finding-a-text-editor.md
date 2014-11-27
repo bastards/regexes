@@ -59,7 +59,7 @@ Even in this era of Apple dominance, it's a fact of life that Apple PCs have gen
 
 ## Sublime Text
 
-I'm giving Sublime Text its own section, not just because it's the editor I use for most  programming, but because it is available on Windows, Macs and Linux. It also comes with a generous trial period.
+I'm giving Sublime Text its own section, not just because it's the editor I use for most programming, but because it is available on Windows, Macs and Linux. It also comes with a generous trial period.
 
 ![Sublime Text 2; version 3 is on its way](images/sublime-text-demo.png)
 

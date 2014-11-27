@@ -146,7 +146,7 @@ The following pattern &ndash;
 
 However, by using parentheses to make optional the literal decimal point *and* the two numerical digits, we can match all the listed amounts:
 
-	\$\d+(\.\d{2})?
+	\$\d+(\.\d{1,2})?
 	
 And again, if you aren't intending to use parentheses to capture any part of the text, then you should use the non-capturing version:	
 	

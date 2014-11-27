@@ -117,7 +117,7 @@ Replace
 
 ## Positive lookbehind
 
-The **lookbehind** is what you expect: match a pattern *only if* a given pattern *does not immediately precede it*. The following pattern matches an `s` character that is preceded by `cat`:
+The **lookbehind** is what you expect: match a pattern *only if* a given pattern *immediately precedes it*. The following pattern matches an `s` character that is preceded by `cat`:
 
 	`(?<=cat)s`
 
