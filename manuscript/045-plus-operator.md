@@ -47,7 +47,7 @@ Let's use the plus sign to change the repeated newline characters in Richard Fey
 
 Given this text:
 
-~~~text
+~~~
 	Dear Mr. Stanley, 
 
 
@@ -70,14 +70,14 @@ Given this text:
 Convert it to:
 
 
-```text
+~~~
 	Dear Mr. Stanley, 
 	I don’t know how to answer your question -- I see no contradiction. 
 	All you have to do is, from time to time -- in spite of everything, 
 	just try to examine a problem in a novel way. 
 	You won’t “stifle the creative process” if you remember to think 
 	from time to time. Don’t you have time to think?
-```
+~~~
 
 #### Answer
 
@@ -98,7 +98,6 @@ Technically, *yes*. But since the **Replace** value is set to replace the patter
 
 Try it out yourself. Copy this single-spaced block of text:
 
-{lang="text"}
 ~~~
 	The quick brown fox
 	jumps over
@@ -122,10 +121,12 @@ Here's a simple webpage:
 It looks like it's two lines of text, right? If you were to copy-and-paste the webpage to a text-editor, you'd get this:
 
 
-{:lang="text"}
+~~~
 	This is a headline
 
 	This is paragraph text used as filler text for a paragraph.
+
+~~~
 	
 *However*, if we view the webpage's **source code**:
 
@@ -142,7 +143,7 @@ This approach to rendering whitespace is referred to as **insignificant whitespa
 So why do *we* care? Well, we normally don't. But if you ever get into web-scraping &ndash; writing a program to automatically download web pages to turn them into data &ndash; your program will return the text content of that paragraph as:
 
 
-{:lang="text"}
+~~~
 	This is                        paragraph
 	
 		text 
@@ -152,15 +153,16 @@ So why do *we* care? Well, we normally don't. But if you ever get into web-scrap
 		          a 
 	  
 		paragraph.
-
+~~~
 
 Usually, during web-scraping, it's fine to store the raw text in its original form. But sometimes you just want it as a readable sentence:
 
 
-{:lang="text"}
+~~~
 	This is paragraph text used as filler text for a paragraph. 
-	
-	
+~~~
+
+
 Write the regex pattern(s) that will clean up the insignificant whitespace.
 
 #### Answer

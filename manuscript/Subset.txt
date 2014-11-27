@@ -1,4 +1,1 @@
-000-intro.md
-0-release-notes.md
 045-plus-operator.md
-999-900-cheat-sheet.md
