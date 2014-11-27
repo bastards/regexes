@@ -1,0 +1,423 @@
+<html><body>
+
+<style>
+	table{
+		width: 100%
+	}
+
+	tr:nth-child(2n) td{
+		background: #e7eae7;
+	}
+
+	th{
+		font-size: 90%;
+		font-family: "Helvetica Neue";
+	}
+
+	td{
+		border-top: thin solid #aaa;
+		vertical-align: top;
+		padding: 1px 3px;
+		border-left: thin solid #bbb;
+	}
+
+	.desc{
+		font-size: 75%;
+		font-family: "Helvetica Neue";
+		padding-left: 6px;
+	}
+
+	td.exp{
+		width: 250px;
+		padding-right: 5px;
+	}
+	span.exp{
+		font-size: 115%;
+		font-family: Courier;
+	}
+</style>
+
+
+	<table>
+		<thead>
+     <tr>
+			<th>Syntax</th>
+			<th>Find</th>
+			<th>Replace</th>
+			<th>Original text</th>
+			<th>Replace first</th>
+			<th>Replace all</th>
+     </tr>
+
+		</thead>
+
+<tr>
+
+		<td class="exp">
+			<span class="exp">^</span>
+			<span class="desc">Beginning of line</span>
+		</td>
+	
+<td><code>^a</code></td>
+<td><code>A</code></td>
+<td><pre>an aria</pre></td>
+<td><pre>An aria</pre></td>
+<td><pre>An aria</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">$</span>
+			<span class="desc">End of line</span>
+		</td>
+	
+<td><code>a$</code></td>
+<td><code>d</code></td>
+<td><pre>an aria</pre></td>
+<td><pre>an arid</pre></td>
+<td><pre>an arid</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">\b</span>
+			<span class="desc">Word boundary</span>
+		</td>
+	
+<td><code>\ba\b</code></td>
+<td><code>an</code></td>
+<td><pre>a aria a</pre></td>
+<td><pre>an aria</pre></td>
+<td><pre>an aria an</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">\B</span>
+			<span class="desc">Not a word boundary</span>
+		</td>
+	
+<td><code>a\B</code></td>
+<td><code>o</code></td>
+<td><pre>an aria</pre></td>
+<td><pre>on aria</pre></td>
+<td><pre>on oria</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">\s</span>
+			<span class="desc">Whitespace character (includes new lines)</span>
+		</td>
+	
+<td><code>\s</code></td>
+<td><code>-</code></td>
+<td><pre>Hey hey hey</pre></td>
+<td><pre>Hey-hey hey</pre></td>
+<td><pre>Hey-hey-hey</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">\S</span>
+			<span class="desc">Not a whitespace character</span>
+		</td>
+	
+<td><code>\S</code></td>
+<td><code>-</code></td>
+<td><pre>Hey hey</pre></td>
+<td><pre>-ey hey</pre></td>
+<td><pre>--- ---</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">\n OR \r</span>
+			<span class="desc">Newline character (depends on operating system)</span>
+		</td>
+	
+<td><code>\n</code></td>
+<td><code>-</code></td>
+<td><pre>Hey
+hey
+hey</pre></td>
+<td><pre>Hey-hey
+hey</pre></td>
+<td><pre>Hey-hey-hey</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">\t</span>
+			<span class="desc">Tab character</span>
+		</td>
+	
+<td><code>\t</code></td>
+<td><code>,</code></td>
+<td><pre>Albany\tNY\tUS</pre></td>
+<td><pre>Albany,NY\tUS</pre></td>
+<td><pre>Albany,NY,US</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">.</span>
+			<span class="desc">Match any character except newlines</span>
+		</td>
+	
+<td><code>a..</code></td>
+<td><code>xyz</code></td>
+<td><pre>an apple
+a bear</pre></td>
+<td><pre>xyzapple
+a bear</pre></td>
+<td><pre>xyzxyzle
+xyzear</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">\w</span>
+			<span class="desc">A word character: letters, numbers, and underscore</span>
+		</td>
+	
+<td><code>a\w</code></td>
+<td><code>xy</code></td>
+<td><pre>an apple</pre></td>
+<td><pre>xy apple</pre></td>
+<td><pre>xy xyple</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">\W</span>
+			<span class="desc">Not a word character</span>
+		</td>
+	
+<td><code>\W</code></td>
+<td><code>-</code></td>
+<td><pre>The cat.</pre></td>
+<td><pre>The-cat.</pre></td>
+<td><pre>The-cat-</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">x|y</span>
+			<span class="desc">Either x or y</span>
+		</td>
+	
+<td><code>dog|cat</code></td>
+<td><code>rat</code></td>
+<td><pre>The cat and dog</pre></td>
+<td><pre>The rat and dog</pre></td>
+<td><pre>The rat and rat</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">[abc]</span>
+			<span class="desc">Either of a,b,c</span>
+		</td>
+	
+<td><code>[abc]</code></td>
+<td><code>x</code></td>
+<td><pre>a bearcat</pre></td>
+<td><pre>x bearcat</pre></td>
+<td><pre>x bexrxxt</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">[^xyz]</span>
+			<span class="desc">Anything but x,y,z</span>
+		</td>
+	
+<td><code>[^abc]</code></td>
+<td><code>x</code></td>
+<td><pre>a bearcat</pre></td>
+<td><pre>a bxarcat</pre></td>
+<td><pre>a bxaxcax</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">[a-z]</span>
+			<span class="desc">Any letters a through z</span>
+		</td>
+	
+<td><code>[A-Z]</code></td>
+<td><code>x</code></td>
+<td><pre>The Cat</pre></td>
+<td><pre>xhe Cat</pre></td>
+<td><pre>xhe xat</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">?</span>
+			<span class="desc">Zero-or-one</span>
+		</td>
+	
+<td><code>x?ray</code></td>
+<td><code>laser</code></td>
+<td><pre>xray ray xxray</pre></td>
+<td><pre>laser ray xxray</pre></td>
+<td><pre>laser laser xlaser</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">*</span>
+			<span class="desc">Zero-or-more</span>
+		</td>
+	
+<td><code>x*ray</code></td>
+<td><code>laser</code></td>
+<td><pre>xray ray xxray</pre></td>
+<td><pre>laser ray xxray</pre></td>
+<td><pre>laser laser laser</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">+</span>
+			<span class="desc">One-or-more</span>
+		</td>
+	
+<td><code>\w+a</code></td>
+<td><code>x</code></td>
+<td><pre>baaaa baaaa</pre></td>
+<td><pre>x baaaa</pre></td>
+<td><pre>x x</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">+?</span>
+			<span class="desc">Lazy one-or-more</span>
+		</td>
+	
+<td><code>\w+?a</code></td>
+<td><code>x</code></td>
+<td><pre>baaaa baaaa</pre></td>
+<td><pre>xaaa baaaa</pre></td>
+<td><pre>xxa xxa</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">{2}</span>
+			<span class="desc">Match exactly 2</span>
+		</td>
+	
+<td><code>ba{2}</code></td>
+<td><code>x</code></td>
+<td><pre>babaaaa babaaaa</pre></td>
+<td><pre>baxaa babaaaa</pre></td>
+<td><pre>baxaa baxaa</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">{2,6}</span>
+			<span class="desc">Match between 2 to 6 occurrences</span>
+		</td>
+	
+<td><code>ba{2,3}</code></td>
+<td><code>x</code></td>
+<td><pre>babaaaa babaaaa</pre></td>
+<td><pre>baxa babaaaa</pre></td>
+<td><pre>baxa baxa</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">{2,}</span>
+			<span class="desc">Match 2 or more occurrences</span>
+		</td>
+	
+<td><code>ba{2,}</code></td>
+<td><code>x</code></td>
+<td><pre>babaaaa babaaaa</pre></td>
+<td><pre>bax babaaaa</pre></td>
+<td><pre>bax bax</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">a(?=bc)</span>
+			<span class="desc">Positive lookahead</span>
+		</td>
+	
+<td><code>J(?=on)</code></td>
+<td><code>D</code></td>
+<td><pre>Jon Jay Jones</pre></td>
+<td><pre>Don Jay Jones</pre></td>
+<td><pre>Don Jay Dones</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">a(?!bc)</span>
+			<span class="desc">Negative lookahead</span>
+		</td>
+	
+<td><code>J(?!on)</code></td>
+<td><code>D</code></td>
+<td><pre>Jon Jay Jones</pre></td>
+<td><pre>Jon Day Jones</pre></td>
+<td><pre>(same)</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">(?&lt;=a)bc</span>
+			<span class="desc">Positive lookbehind</span>
+		</td>
+	
+<td><code>(?&lt;=\d)\.\d\d</code></td>
+<td><code>bucks</code></td>
+<td><pre>He spent 12.42.</pre></td>
+<td><pre>He spent 12 bucks.</pre></td>
+<td><pre>(same)</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">(?&lt;!a)bc</span>
+			<span class="desc">Negative lookbehind</span>
+		</td>
+	
+<td><code>(?&lt;!\d)\.</code></td>
+<td><code>!</code></td>
+<td><pre>He spent 12.42.</pre></td>
+<td><pre>He spent 12.42!</pre></td>
+<td><pre>(same)</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">(?:abc)</span>
+			<span class="desc">Non-capturing group</span>
+		</td>
+	
+<td><code>gr(?:a|e)y</code></td>
+<td><code>black</code></td>
+<td><pre>grey and gray</pre></td>
+<td><pre>black and gray</pre></td>
+<td><pre>black and black</pre></td>
+</tr>
+<tr>
+
+		<td class="exp">
+			<span class="exp">(abc)</span>
+			<span class="desc">Capturing group</span>
+		</td>
+	
+<td><code>(\d)(\d)(\d)</code></td>
+<td><code>\3\2\1 OR $3$2$1</code></td>
+<td><pre>123456</pre></td>
+<td><pre>321456</pre></td>
+<td><pre>321654</pre></td>
+</tr>

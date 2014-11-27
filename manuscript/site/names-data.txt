@@ -1,0 +1,19 @@
+first	middle	last	amount
+James	C.	Fallon	40,000
+Alex	H.	O'Hare	90
+Sal	A.	Thomas	300.25
+Alvin		Barry	121.99
+Kaley		Sims	67,000
+Al	J.	Smith	52
+Shawn	K.	Ralson	300
+Mallory	A.	Johnson	800
+Albert	K.	Sacks	300,500.99
+Sally	R.	Post	400
+Falstaff	E.	York	0
+Allison	O.	Stevens	97,000
+Thomas		Ballard	10,000
+Cal	R.	Simmons	56,800
+Ralph	S.	Mouse	24.54
+Alexander		Singer	9,300
+Alfred	Z.	Stamper	1,780.00
+Dan	R.	Salsbury	2,000.99

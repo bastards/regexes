@@ -1,0 +1,35 @@
+Expression,Type,Description,Find,Replace,Text,Replace first,Replace all
+^,Anchors,Beginning of line,^a,A,an aria,An aria,An aria
+$,Anchors,End of line,a$,d,an aria,an arid,an arid
+\b,Anchors,Word boundary,\ba\b,an,a aria a,an aria,an aria an
+\B,Anchors,Not a word boundary,a\B,o,an aria,on aria,on oria
+\s,Whitespace,Whitespace character (includes new lines),\s,-,Hey hey hey,Hey-hey hey,Hey-hey-hey
+\S,Whitespace,Not a whitespace character,\S,-,Hey hey,-ey hey,--- ---
+\n OR \r,Whitespace,Newline character (depends on operating system),\n,-,"Hey
+hey
+hey","Hey-hey
+hey",Hey-hey-hey
+\t,Whitespace,Tab character,\t,",",Albany\tNY\tUS,"Albany,NY\tUS","Albany,NY,US"
+.,Character sets,Match any character except newlines,a..,xyz,"an apple
+a bear","xyzapple
+a bear","xyzxyzle
+xyzear"
+\w,Character sets,"A word character: letters, numbers, and underscore",a\w,xy,an apple,xy apple,xy xyple
+\W,Character sets,Not a word character,\W,-,The cat.,The-cat.,The-cat-
+x|y,Character sets,Either x or y,dog|cat,rat,The cat and dog,The rat and dog,The rat and rat
+[abc],Character sets,"Either of a,b,c",[abc],x,a bearcat,x bearcat,x bexrxxt
+[^xyz],Character sets,"Anything but x,y,z",[^abc],x,a bearcat,a bxarcat,a bxaxcax
+[a-z],Character sets,Any letters a through z,[A-Z],x,The Cat,xhe Cat,xhe xat
+?,Quantifiers,Zero-or-one,x?ray,laser,xray ray xxray,laser ray xxray,laser laser xlaser
+*,Quantifiers,Zero-or-more,x*ray,laser,xray ray xxray,laser ray xxray,laser laser laser
++,Quantifiers,One-or-more,\w+a,x,baaaa baaaa,x baaaa,x x
++?,Quantifiers,Lazy one-or-more,\w+?a,x,baaaa baaaa,xaaa baaaa,xxa xxa
+{2},Quantifiers,Match exactly 2,ba{2},x,babaaaa babaaaa,baxaa babaaaa,baxaa baxaa
+"{2,6}",Quantifiers,Match between 2 to 6 occurrences,"ba{2,3}",x,babaaaa babaaaa,baxa babaaaa,baxa baxa
+"{2,}",Quantifiers,Match 2 or more occurrences,"ba{2,}",x,babaaaa babaaaa,bax babaaaa,bax bax
+a(?=bc),Lookarounds,Positive lookahead,J(?=on),D,Jon Jay Jones,Don Jay Jones,Don Jay Dones
+a(?!bc),Lookarounds,Negative lookahead,J(?!on),D,Jon Jay Jones,Jon Day Jones,(same)
+(?<=a)bc,Lookarounds,Positive lookbehind,(?<=\d)\.\d\d,bucks,He spent 12.42.,He spent 12 bucks.,(same)
+(?<!a)bc,Lookarounds,Negative lookbehind,(?<!\d)\.,!,He spent 12.42.,He spent 12.42!,(same)
+(?:abc),Grouping,Non-capturing group,gr(?:a|e)y,black,grey and gray,black and gray,black and black
+(abc),Grouping,Capturing group,(\d)(\d)(\d),\3\2\1 OR $3$2$1,123456,321456,321654
