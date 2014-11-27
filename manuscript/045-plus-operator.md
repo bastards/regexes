@@ -47,7 +47,7 @@ Let's use the plus sign to change the repeated newline characters in Richard Fey
 
 Given this text:
 
-{:lang="text"}
+~~~
 	Dear Mr. Stanley, 
 
 
@@ -64,20 +64,20 @@ Given this text:
 	You won’t “stifle the creative process” if you remember to think 
 
 	from time to time. Don’t you have time to think?
-
+~~~
 
 
 Convert it to:
 
 
-{:lang="text"}
+~~~
 	Dear Mr. Stanley, 
 	I don’t know how to answer your question -- I see no contradiction. 
 	All you have to do is, from time to time -- in spite of everything, 
 	just try to examine a problem in a novel way. 
 	You won’t “stifle the creative process” if you remember to think 
 	from time to time. Don’t you have time to think?
-
+~~~
 
 #### Answer
 
